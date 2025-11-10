@@ -7,13 +7,11 @@ type PersonLinkType = {
 };
 export const PersonLink: React.FC<PersonLinkType> = ({ person }) => {
   return (
-    <td>
-      <Link
-        to={`/people/${person.slug}`}
-        className={cn({ 'has-text-danger': person.sex === 'f' })}
-      >
-        {person.name}
-      </Link>
-    </td>
+    <Link
+      to={`/people/${person.slug}`}
+      className={cn({ 'has-text-danger': person.sex === 'f' })}
+    >
+      {person.name}
+    </Link>
   );
 };

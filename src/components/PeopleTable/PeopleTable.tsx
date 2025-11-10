@@ -50,17 +50,22 @@ export const PeopleTable = () => {
               <td>{person.sex}</td>
               <td>{person.born}</td>
               <td>{person.died}</td>
-              {mother ? (
-                <PersonLink person={mother} />
-              ) : (
-                <td>{person.motherName ? person.motherName : '-'}</td>
-              )}
 
-              {father ? (
-                <PersonLink person={father} />
-              ) : (
-                <td>{person.fatherName ? person.fatherName : '-'}</td>
-              )}
+              <td>
+                {mother ? (
+                  <PersonLink person={mother} />
+                ) : (
+                  person.motherName || '-'
+                )}
+              </td>
+
+              <td>
+                {father ? (
+                  <PersonLink person={father} />
+                ) : (
+                  person.fatherName || '-'
+                )}
+              </td>
             </tr>
           );
         })}
