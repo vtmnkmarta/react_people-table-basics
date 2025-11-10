@@ -1,5 +1,5 @@
 import './App.scss';
-import { Navbar } from './components/Navbar/Navbar';
+import { Navbar } from './components/Navbar';
 import { Outlet } from 'react-router-dom';
 
 export const App = () => {

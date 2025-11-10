@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { PeopleContext } from '../../context/PeopleContext';
 import cn from 'classnames';
-import { PersonLink } from '../PersonLink/PersonLink';
-import { Link, useParams } from 'react-router-dom';
+import { PersonLink } from '../PersonLink';
+import { useParams } from 'react-router-dom';
 
 export const PeopleTable = () => {
   const { people } = useContext(PeopleContext);
@@ -39,12 +39,7 @@ export const PeopleTable = () => {
               })}
             >
               <td>
-                <Link
-                  to={`/people/${person.slug}`}
-                  className={cn({ 'has-text-danger': person.sex === 'f' })}
-                >
-                  {person.name}
-                </Link>
+                <PersonLink person={person} />
               </td>
 
               <td>{person.sex}</td>
